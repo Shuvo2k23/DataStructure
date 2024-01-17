@@ -12,11 +12,11 @@ newptr build(){
     newptr x = (struct node*) malloc(sizeof(newptr));
     return x;
 }
-void print(newptr z){
-    newptr tmp = z;
-    while(tmp!=NULL){
-        cout<<tmp->value<<" ";
-        tmp = tmp->next;
+void printer(newptr head){
+    
+    while(head!=NULL){
+        cout<<head->value<<" ";
+        head = head->next;
     }
 }
 void addFirst(newptr *head,int val){
@@ -96,7 +96,7 @@ int main(){
     // b->next = c;
     // c->next = NULL;
     // d = a;
-    // print(d);
+    // printer(d);
     // while(d!=NULL){
     //     cout<<d->value<<" ";
     //     d = d->next;
@@ -115,8 +115,9 @@ int main(){
     }
     addAt(&head, 5, 50);
     delVal(&head,4);
-    print(head);
-
+    printer(head);
+    cout<<endl;
+    printer(head);
     return 0;
 }
 /*
